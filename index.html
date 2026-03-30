@@ -40,6 +40,13 @@
             border-radius: 1rem;
             z-index: -1;
         }
+        .project-image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 1.5rem;
+        }
     </style>
 </head>
 <body class="bg-[#0a0a0c] text-slate-200 antialiased">
@@ -101,7 +108,7 @@
                     <div>
                         <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">About Me</h2>
                         <p class="text-slate-400 leading-relaxed mb-6">
-                            I am a 19-year-old 2nd-year Information Technology student at <strong>Cebu Institute of Technology</strong>. I am a dedicated, adaptable, and hardworking individual eager to gain real-world experience.
+                            I am a 19-year-old 2nd-year Information Technology student at <strong>Cebu Institute of Technology - University</strong>. I am a dedicated, adaptable, and hardworking individual eager to gain real-world experience.
                         </p>
                         <p class="text-slate-400 leading-relaxed">
                             My journey is fueled by a passion for both the technical and creative aspects of IT. I bridge the gap between functional code and aesthetic design.
@@ -119,23 +126,26 @@
                         </div>
                     </div>
 
-                    <div class="space-y-4">
-                        <div class="flex gap-4 items-center">
-                            <div class="h-10 w-10 rounded-lg bg-blue-500/10 flex items-center justify-center shrink-0">
-                                <i data-lucide="graduation-cap" class="text-blue-500 w-5 h-5"></i>
+                    <div class="space-y-6">
+                        <!-- CIT-U Entry -->
+                        <div class="flex gap-4 items-center p-4 glass-card rounded-xl">
+                            <div class="h-14 w-14 rounded-lg bg-white/5 p-2 flex items-center justify-center shrink-0">
+                                <img src="cit_logo.png" alt="CIT-U Logo" class="w-full h-full object-contain">
                             </div>
                             <div>
-                                <h4 class="font-bold text-white text-sm">Cebu Institute of Technology</h4>
+                                <h4 class="font-bold text-white text-sm">Cebu Institute of Technology - University</h4>
                                 <p class="text-xs text-slate-500 uppercase tracking-tight">Current BSIT Student</p>
                             </div>
                         </div>
-                        <div class="flex gap-4 items-center">
-                            <div class="h-10 w-10 rounded-lg bg-blue-500/10 flex items-center justify-center shrink-0">
-                                <i data-lucide="award" class="text-blue-500 w-5 h-5"></i>
+                        
+                        <!-- UC Entry -->
+                        <div class="flex gap-4 items-center p-4 glass-card rounded-xl">
+                            <div class="h-14 w-14 rounded-lg bg-white/5 p-2 flex items-center justify-center shrink-0">
+                                <img src="uc_logo.png" alt="University of Cebu Logo" class="w-full h-full object-contain">
                             </div>
                             <div>
                                 <h4 class="font-bold text-white text-sm">With Honors</h4>
-                                <p class="text-xs text-slate-500 uppercase tracking-tight">SHS Academic Achievement (Grade 11)</p>
+                                <p class="text-xs text-slate-500 uppercase tracking-tight">SHS Academic Achievement (UC Grade 11)</p>
                             </div>
                         </div>
                     </div>
@@ -192,16 +202,36 @@
             <h2 class="text-3xl font-bold mb-12 text-center">Project Experience</h2>
             
             <div class="space-y-12">
-                <!-- Exp 1 -->
+                <!-- Exp 1: Milky Sphere -->
                 <div class="relative pl-8 border-l-2 border-blue-600/30">
                     <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-600 shadow-[0_0_15px_rgba(37,99,235,0.6)]"></div>
-                    <h3 class="text-xl font-bold text-white">Food Stall Business Project</h3>
-                    <p class="text-blue-400 text-sm mb-4 font-medium uppercase tracking-wider">Senior High School Core Activity</p>
-                    <ul class="text-slate-400 space-y-2 text-sm list-disc list-inside">
-                        <li>Collaborated with classmates to manage concept, budget, and operations.</li>
-                        <li>Worked as a proactive team member handling logistics and task management.</li>
-                        <li>Promoted the business during activity days to maximize reach.</li>
-                    </ul>
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">"Milky Sphere" Food Stall Project</h3>
+                            <p class="text-blue-400 text-sm mb-4 font-medium uppercase tracking-wider">Production Team Head | SHS Business Simulation</p>
+                        </div>
+                        <span class="px-3 py-1 bg-blue-600/20 text-blue-400 rounded-full text-xs font-semibold border border-blue-600/30">Academic Project</span>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 mt-4">
+                        <ul class="text-slate-400 space-y-3 text-sm list-disc list-inside">
+                            <li><strong>Leadership:</strong> Served as the Production Team Head, overseeing the creation of "Milky Dango" (Japanese-Filipino fusion sweets).</li>
+                            <li><strong>Strategic Planning:</strong> Developed the company vision to become a go-to destination for high-quality products.</li>
+                            <li><strong>Product Innovation:</strong> Innovated traditional dango by serving it in clear cups with diverse Filipino flavors and toppings.</li>
+                            <li><strong>Operational Management:</strong> Managed logistics and cross-cultural interaction through unique product offerings.</li>
+                        </ul>
+                        
+                        <div class="project-image-container group text-center bg-black/20 p-2">
+                            <img 
+                                src="milkysphere.jpg" 
+                                alt="Milky Sphere Flyer" 
+                                class="w-full h-auto opacity-90 group-hover:opacity-100 transition-opacity duration-300 rounded-lg shadow-lg"
+                            >
+                            <div class="mt-2">
+                                <p class="text-[10px] text-slate-500 uppercase tracking-widest font-bold">Marketing & Branding Asset</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Exp 2 -->
