@@ -47,6 +47,30 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             margin-top: 1.5rem;
         }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        .gallery-item {
+            aspect-ratio: 4/5;
+            overflow: hidden;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            border-color: rgba(59, 130, 246, 0.5);
+        }
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 4px 12px;
+            border-radius: 99px;
+            font-size: 0.75rem;
+            color: #94a3b8;
+        }
     </style>
 </head>
 <body class="bg-[#0a0a0c] text-slate-200 antialiased">
@@ -110,9 +134,6 @@
                         <p class="text-slate-400 leading-relaxed mb-6">
                             I am a 19-year-old 2nd-year Information Technology student at <strong>Cebu Institute of Technology - University</strong>. I am a dedicated, adaptable, and hardworking individual eager to gain real-world experience.
                         </p>
-                        <p class="text-slate-400 leading-relaxed">
-                            My journey is fueled by a passion for both the technical and creative aspects of IT. I bridge the gap between functional code and aesthetic design.
-                        </p>
                     </div>
                     
                     <div class="grid grid-cols-2 gap-6">
@@ -127,7 +148,6 @@
                     </div>
 
                     <div class="space-y-6">
-                        <!-- CIT-U Entry -->
                         <div class="flex gap-4 items-center p-4 glass-card rounded-xl">
                             <div class="h-14 w-14 rounded-lg bg-white/5 p-2 flex items-center justify-center shrink-0">
                                 <img src="cit_logo.png" alt="CIT-U Logo" class="w-full h-full object-contain">
@@ -138,7 +158,6 @@
                             </div>
                         </div>
                         
-                        <!-- UC Entry -->
                         <div class="flex gap-4 items-center p-4 glass-card rounded-xl">
                             <div class="h-14 w-14 rounded-lg bg-white/5 p-2 flex items-center justify-center shrink-0">
                                 <img src="uc_logo.png" alt="University of Cebu Logo" class="w-full h-full object-contain">
@@ -154,96 +173,137 @@
         </div>
     </section>
 
-    <!-- Skills & Services -->
-    <section id="skills" class="py-24 px-6">
-        <div class="max-w-6xl mx-auto text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Skills & Services</h2>
-            <p class="text-slate-400">What I bring to the table</p>
-        </div>
-        
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- Skill 1 -->
-            <div class="p-8 rounded-2xl glass-card hover:border-blue-500/50 transition-all group">
-                <i data-lucide="code" class="w-10 h-10 text-blue-500 mb-6 group-hover:scale-110 transition-transform"></i>
-                <h3 class="text-xl font-bold mb-3 text-white">Development</h3>
-                <p class="text-slate-400 text-sm leading-relaxed mb-4">Basic programming and simple website development using modern technologies.</p>
-                <div class="flex flex-wrap gap-2">
-                    <span class="px-3 py-1 bg-white/5 rounded-full text-xs">HTML/CSS</span>
-                    <span class="px-3 py-1 bg-white/5 rounded-full text-xs">Basic Code</span>
+    <!-- Skills & Services Section -->
+    <section id="skills" class="py-24 px-6 bg-[#0a0a0c]">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-4 text-white">Skills & Services</h2>
+            <p class="text-slate-500 mb-16">What I bring to the table</p>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Development Card -->
+                <div class="p-10 glass-card rounded-3xl text-left border border-white/5 hover:border-blue-500/20 transition-all">
+                    <h3 class="text-2xl font-bold text-white mb-6">Development</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-8">
+                        Basic programming and simple website development using modern technologies.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">Basic Code</span>
+                    </div>
                 </div>
-            </div>
-            <!-- Skill 2 -->
-            <div class="p-8 rounded-2xl glass-card hover:border-blue-500/50 transition-all group">
-                <i data-lucide="video" class="w-10 h-10 text-blue-500 mb-6 group-hover:scale-110 transition-transform"></i>
-                <h3 class="text-xl font-bold mb-3 text-white">Creative Editing</h3>
-                <p class="text-slate-400 text-sm leading-relaxed mb-4">Video editing for projects and basic graphic design for academic or personal use.</p>
-                <div class="flex flex-wrap gap-2">
-                    <span class="px-3 py-1 bg-white/5 rounded-full text-xs">Video Editing</span>
-                    <span class="px-3 py-1 bg-white/5 rounded-full text-xs">Graphic Design</span>
+
+                <!-- Creative Editing Card -->
+                <div class="p-10 glass-card rounded-3xl text-left border border-white/5 hover:border-blue-500/20 transition-all">
+                    <h3 class="text-2xl font-bold text-white mb-6">Creative Editing</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-8">
+                        Video editing for projects and basic graphic design for academic or personal use.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag">Video Editing</span>
+                        <span class="skill-tag">Graphic Design</span>
+                    </div>
                 </div>
-            </div>
-            <!-- Skill 3 -->
-            <div class="p-8 rounded-2xl glass-card hover:border-blue-500/50 transition-all group">
-                <i data-lucide="file-text" class="w-10 h-10 text-blue-500 mb-6 group-hover:scale-110 transition-transform"></i>
-                <h3 class="text-xl font-bold mb-3 text-white">Writing & Comm</h3>
-                <p class="text-slate-400 text-sm leading-relaxed mb-4">Professional writing and proofreading. Fluent in English and Tagalog.</p>
-                <div class="flex flex-wrap gap-2">
-                    <span class="px-3 py-1 bg-white/5 rounded-full text-xs">English</span>
-                    <span class="px-3 py-1 bg-white/5 rounded-full text-xs">Tagalog</span>
-                    <span class="px-3 py-1 bg-white/5 rounded-full text-xs">Proofreading</span>
+
+                <!-- Writing & Comm Card -->
+                <div class="p-10 glass-card rounded-3xl text-left border border-white/5 hover:border-blue-500/20 transition-all">
+                    <h3 class="text-2xl font-bold text-white mb-6">Writing & Comm</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-8">
+                        Professional writing and proofreading. Fluent in English and Tagalog.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag">English</span>
+                        <span class="skill-tag">Tagalog</span>
+                        <span class="skill-tag">Proofreading</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="py-24 px-6 bg-[#0d0d0f]">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold mb-12 text-center">Project Experience</h2>
+    <section id="experience" class="py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-center">Project Highlights</h2>
             
-            <div class="space-y-12">
-                <!-- Exp 1: Milky Sphere -->
-                <div class="relative pl-8 border-l-2 border-blue-600/30">
-                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-600 shadow-[0_0_15px_rgba(37,99,235,0.6)]"></div>
-                    <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
+            <div class="grid lg:grid-cols-2 gap-12 mb-12">
+                <!-- Milky Sphere -->
+                <div class="p-8 glass-card rounded-3xl border border-white/5 hover:border-blue-500/20 transition-all">
+                    <div class="flex justify-between items-start mb-6">
                         <div>
-                            <h3 class="text-2xl font-bold text-white">"Milky Sphere" Food Stall Project</h3>
-                            <p class="text-blue-400 text-sm mb-4 font-medium uppercase tracking-wider">Production Team Head | SHS Business Simulation</p>
+                            <h3 class="text-2xl font-bold text-white mb-2">"Milky Sphere" Business Project</h3>
+                            <p class="text-blue-400 text-xs font-bold uppercase tracking-widest">Production Team Head</p>
                         </div>
-                        <span class="px-3 py-1 bg-blue-600/20 text-blue-400 rounded-full text-xs font-semibold border border-blue-600/30">Academic Project</span>
+                        <div class="bg-blue-600/20 p-2 rounded-lg">
+                            <i data-lucide="shopping-bag" class="text-blue-500 w-6 h-6"></i>
+                        </div>
                     </div>
-                    
-                    <div class="grid md:grid-cols-2 gap-8 mt-4">
-                        <ul class="text-slate-400 space-y-3 text-sm list-disc list-inside">
-                            <li><strong>Leadership:</strong> Served as the Production Team Head, overseeing the creation of "Milky Dango" (Japanese-Filipino fusion sweets).</li>
-                            <li><strong>Strategic Planning:</strong> Developed the company vision to become a go-to destination for high-quality products.</li>
-                            <li><strong>Product Innovation:</strong> Innovated traditional dango by serving it in clear cups with diverse Filipino flavors and toppings.</li>
-                            <li><strong>Operational Management:</strong> Managed logistics and cross-cultural interaction through unique product offerings.</li>
-                        </ul>
-                        
-                        <div class="project-image-container group text-center bg-black/20 p-2">
-                            <img 
-                                src="milkysphere.jpg" 
-                                alt="Milky Sphere Flyer" 
-                                class="w-full h-auto opacity-90 group-hover:opacity-100 transition-opacity duration-300 rounded-lg shadow-lg"
-                            >
-                            <div class="mt-2">
-                                <p class="text-[10px] text-slate-500 uppercase tracking-widest font-bold">Marketing & Branding Asset</p>
-                            </div>
-                        </div>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Led production for "Milky Dango," innovatively combining Japanese aesthetics with Filipino flavors. Managed product development and operational vision for a successful school business simulation.
+                    </p>
+                    <div class="project-image-container">
+                        <img src="milkysphere.jpg" alt="Milky Sphere" class="w-full rounded-lg">
                     </div>
                 </div>
 
-                <!-- Exp 2 -->
-                <div class="relative pl-8 border-l-2 border-blue-600/30">
-                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-600 shadow-[0_0_15px_rgba(37,99,235,0.6)]"></div>
-                    <h3 class="text-xl font-bold text-white">Creative Editing Experience</h3>
-                    <p class="text-blue-400 text-sm mb-4 font-medium uppercase tracking-wider">Academic & Personal Projects</p>
-                    <ul class="text-slate-400 space-y-2 text-sm list-disc list-inside">
-                        <li>Edited comprehensive videos for school presentations.</li>
-                        <li>Designed digital assets and graphics for academic requirements.</li>
-                        <li>Utilized various tools to enhance visual storytelling.</li>
-                    </ul>
+                <!-- Creative Editing Portfolio -->
+                <div class="p-8 glass-card rounded-3xl border border-white/5 hover:border-blue-500/20 transition-all">
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-2">Creative Editing & Design</h3>
+                            <p class="text-blue-400 text-xs font-bold uppercase tracking-widest">Visual Arts & Manipulation</p>
+                        </div>
+                        <div class="bg-purple-600/20 p-2 rounded-lg">
+                            <i data-lucide="palette" class="text-purple-500 w-6 h-6"></i>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        A collection of digital designs, from complex architecture layouts to minimalist lifestyle content. Focused on clean aesthetics and meaningful visual composition.
+                    </p>
+                    
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <img src="sample4.png" alt="Edit 4" class="w-full h-full object-cover">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="sample3.jpeg" alt="Edit 3" class="w-full h-full object-cover">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="sample2.jpeg" alt="Edit 2" class="w-full h-full object-cover">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="sample1.jpeg" alt="Edit 1" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- New Game Project (Full Width/Large Card) -->
+            <div class="grid lg:grid-cols-1">
+                <div class="p-8 glass-card rounded-3xl border border-white/5 hover:border-blue-500/20 transition-all">
+                    <div class="flex flex-col md:flex-row gap-8 items-center">
+                        <div class="flex-1">
+                            <div class="flex justify-between items-start mb-6">
+                                <div>
+                                    <h3 class="text-2xl font-bold text-white mb-2">"Battle of Luneta" Game Project</h3>
+                                    <p class="text-blue-400 text-xs font-bold uppercase tracking-widest">Turn-Based Fighting Game • Lead Team Project</p>
+                                </div>
+                                <div class="bg-emerald-600/20 p-2 rounded-lg">
+                                    <i data-lucide="swords" class="text-emerald-500 w-6 h-6"></i>
+                                </div>
+                            </div>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                                Collaborated with my classmates to develop a simple turn-based fighting game. This project helped us master core programming logic, turn-based mechanics, and collaborative development workflows in a team setting.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag">Game Logic</span>
+                                <span class="skill-tag">Team Collaboration</span>
+                                <span class="skill-tag">Turn-Based Mechanics</span>
+                            </div>
+                        </div>
+                        <div class="w-full md:w-1/2 project-image-container mt-0">
+                            <img src="game.jpg" alt="Battle of Luneta Project Team" class="w-full rounded-lg object-cover aspect-video">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -271,10 +331,10 @@
                     </div>
                     <div class="flex gap-4 mt-8">
                         <a href="https://www.facebook.com/marco.boroy/" class="p-3 rounded-full bg-white/5 hover:bg-white/10 transition-all hover:-translate-y-1">
-                            <i data-lucide="facebook"></i>
+                            <i data-lucide="facebook" class="w-5 h-5 text-slate-300"></i>
                         </a>
                         <a href="https://www.instagram.com/marcoaa___/" class="p-3 rounded-full bg-white/5 hover:bg-white/10 transition-all hover:-translate-y-1">
-                            <i data-lucide="instagram"></i>
+                            <i data-lucide="instagram" class="w-5 h-5 text-slate-300"></i>
                         </a>
                     </div>
                 </div>
@@ -293,45 +353,22 @@
         </div>
     </section>
 
-    <footer class="py-12 border-t border-white/5 text-center text-slate-500 text-sm">
-        <p>&copy; 2024 Marco Dominic Boroy. All Rights Reserved.</p>
+    <footer class="py-12 border-t border-white/5 text-center text-slate-500 text-xs uppercase tracking-[0.2em]">
+        <p>&copy; 2024 Marco Dominic Boroy</p>
     </footer>
 
     <script>
-        // Ensure Lucide is loaded before running
         window.onload = function() {
             if (typeof lucide !== 'undefined') {
                 lucide.createIcons();
             }
         };
 
-        // Simple Email Sender logic
         function sendEmail() {
             const body = document.getElementById('emailBody').value;
             if(!body) return;
             window.location.href = `mailto:mdlboroy@gmail.com?body=${encodeURIComponent(body)}`;
         }
-
-        // Active Nav highlighting on scroll
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.nav-link');
-            
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (window.pageYOffset >= sectionTop - 100) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('text-blue-400');
-                if (link.getAttribute('href').includes(current)) {
-                    link.classList.add('text-blue-400');
-                }
-            });
-        });
     </script>
 </body>
 </html>
